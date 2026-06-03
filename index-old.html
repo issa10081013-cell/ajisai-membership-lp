@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あじさい 会員登録 - 親子キャリア教育コミュニティ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'YuGothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            background: linear-gradient(135deg, #5B3FA0 0%, #8B5FBF 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+
+        .emoji {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        /* ============ SECTION TITLES ============ */
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5B3FA0;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #E8A8D4;
+            padding-bottom: 15px;
+        }
+
+        /* ============ PROBLEMS ============ */
+        .problems {
+            margin-bottom: 60px;
+        }
+
+        .problem-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .problem-card {
+            background: #F5F5F5;
+            padding: 20px;
+            border-left: 4px solid #E8A8D4;
+            border-radius: 4px;
+        }
+
+        .problem-card p {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .problem-card .detail {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* ============ SOLUTIONS ============ */
+        .solutions {
+            margin-bottom: 60px;
+        }
+
+        .solution-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .solution-card {
+            text-align: center;
+            padding: 30px;
+            background: #FAFAFA;
+            border-radius: 8px;
+            border: 2px solid #E8E8E8;
+        }
+
+        .solution-card .emoji {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+
+        .solution-card h3 {
+            color: #5B3FA0;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .solution-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ============ PLANS ============ */
+        .plans {
+            margin-bottom: 60px;
+        }
+
+        .plans-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .plans-table th {
+            background: #5B3FA0;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border: none;
+        }
+
+        .plans-table td {
+            padding: 15px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .plans-table tr:hover {
+            background: #F9F9F9;
+        }
+
+        .plan-name {
+            color: #5B3FA0;
+            font-weight: 600;
+        }
+
+        .plan-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #D32F2F;
+        }
+
+        .plan-features {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ============ EVENT ============ */
+        .event {
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #FFF5F8 0%, #F0E8FF 100%);
+            padding: 40px 20px;
+            border-radius: 12px;
+            border: 2px dashed #E8A8D4;
+            text-align: center;
+        }
+
+        .event h3 {
+            color: #5B3FA0;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .event .event-date {
+            font-size: 18px;
+            font-weight: bold;
+            color: #D32F2F;
+            margin-bottom: 10px;
+        }
+
+        .event p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        /* ============ CTA BUTTONS ============ */
+        .cta-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #5B3FA0 0%, #8B5FBF 100%);
+            color: white;
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(91, 63, 160, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: white;
+            color: #5B3FA0;
+            border: 2px solid #5B3FA0;
+        }
+
+        .cta-button.secondary:hover {
+            background: #F5F5F5;
+        }
+
+        /* ============ FAQ ============ */
+        .faq {
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-left: 4px solid #5B3FA0;
+            padding-left: 20px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #5B3FA0;
+            cursor: pointer;
+            padding: 12px;
+            background: #F5F5F5;
+            border-radius: 4px;
+            user-select: none;
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: #5B3FA0;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer-social {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .footer-social a {
+            color: #E8A8D4;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .plan-price {
+                font-size: 18px;
+            }
+
+            .solution-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ VISUAL DETAILS ============ */
+        .highlight {
+            color: #D32F2F;
+            font-weight: 600;
+        }
+
+        .text-muted {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #E0E0E0;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+    <div class="container">
+        <h1>『うちの子、このままでいいのかな』</h1>
+        <p>そんな気持ち、ひとりで抱えていませんか？</p>
+        <div class="emoji">🌿🌸</div>
+        <p style="font-size: 18px; margin-top: 30px;"><strong>子ども・親・先生がつながる<br>あたらしい教育コミュニティ</strong></p>
+    </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="container">
+    <section style="margin-bottom: 60px; text-align: center;">
+        <p style="font-size: 16px; color: #666; line-height: 1.8;">
+            福岡から始まる、<span class="highlight">親子で学べるキャリア教育</span>。<br>
+            夢を追い続ける大人のストーリーを聞いて、<br>
+            子どもの『なりたい自分』が見つかるコミュニティです。
+        </p>
+    </section>
+
+    <!-- ============ PROBLEMS ============ -->
+    <section class="problems">
+        <div class="section-title">こんなお悩みありませんか？</div>
+        <div class="problem-cards">
+            <div class="problem-card">
+                <p>📚 進路・将来について、誰に相談すればいい？</p>
+                <div class="detail">学校の先生だけでは足りない...と感じていませんか？</div>
+            </div>
+            <div class="problem-card">
+                <p>😟 同じ悩みを持つ親たちと繋がりたい</p>
+                <div class="detail">孤立した子育てではなく、親のコミュニティがほしい</div>
+            </div>
+            <div class="problem-card">
+                <p>💭 子どもの『本当にやりたいこと』を応援したい</p>
+                <div class="detail">でもどうサポートしていいかわからない......</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SOLUTIONS ============ -->
+    <section class="solutions">
+        <div class="section-title">あじさいが解決します</div>
+        <div class="solution-cards">
+            <div class="solution-card">
+                <div class="emoji">🎯</div>
+                <h3>夢を追う大人のストーリー</h3>
+                <p>リアルに活躍する大人たちの人生経験を聞くことで、子どもの『やりたい』『なりたい』が見つかります。</p>
+            </div>
+            <div class="solution-card">
+                <div class="emoji">👨‍👩‍👧</div>
+                <h3>親のコミュニティ</h3>
+                <p>同じビジョンを持つ親たちと繋がり、『子育ての悩み』『子どもの未来』を安心して語り合える場所。</p>
+            </div>
+            <div class="solution-card">
+                <div class="emoji">💡</div>
+                <h3>ゼロ教師負担 × 継続</h3>
+                <p>先生に負担をかけず、子どもの成長が『継続』する。これは日本で唯一のモデルです。</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============ PLANS ============ -->
+    <section class="plans">
+        <div class="section-title">会員プラン</div>
+        <p style="text-align: center; margin-bottom: 30px; color: #666;">
+            あなたのライフスタイルに合わせて選べます
+        </p>
+
+        <table class="plans-table">
+            <thead>
+                <tr>
+                    <th>プラン</th>
+                    <th>月額</th>
+                    <th>特典</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="plan-name">ベーシック</span></td>
+                    <td><span class="plan-price">¥1,000</span></td>
+                    <td class="plan-features">
+                        ✅ ギフトBOX（¥1,500～¥2,000分）<br>
+                        ✅ 親コミュニティ参加<br>
+                        ✅ ロールモデル動画視聴
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="plan-name">スタンダード</span></td>
+                    <td><span class="plan-price">¥3,000</span></td>
+                    <td class="plan-features">
+                        ✅ ギフトBOX充実版<br>
+                        ✅ 月2本動画コンテンツ配信<br>
+                        ✅ イベント割引（¥5,000→¥3,500）<br>
+                        ✅ 親コミュニティ参加
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="plan-name">プレミアム</span></td>
+                    <td><span class="plan-price">¥5,000</span></td>
+                    <td class="plan-features">
+                        ✅ ギフトBOXプレミアム版<br>
+                        ✅ 月2本動画コンテンツ配信<br>
+                        ✅ イベント無料参加<br>
+                        ✅ 子どもキャリア相談（月1回）<br>
+                        ✅ 親コミュニティ参加
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="text-align: center; margin-top: 20px; color: #999; font-size: 13px;">
+            ※ すべてのプラン、初回7日間は無料トライアル可能です
+        </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============ EVENT ============ -->
+    <section class="event">
+        <div class="emoji">🎉</div>
+        <h3>6月21日 父の日スペシャルイベント</h3>
+        <div class="event-date">開催中止のお知らせはございません</div>
+        <p>
+            まずは、あじさいを体験できるイベントにご参加ください！<br>
+            親子で一緒に『夢を追い続ける大人』のストーリーを聞いてみませんか？
+        </p>
+        <p style="font-size: 14px; color: #666;">
+            📍 場所: 福岡市内<br>
+            ⏰ 時間: 午前の部 / 午後の部<br>
+            👥 定員: 各回30名
+        </p>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <div class="cta-section">
+        <a href="#" class="cta-button">今すぐ会員登録する</a>
+        <p style="margin-top: 15px; font-size: 13px; color: #999;">
+            登録後、メールで詳細情報をお送りします
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq">
+        <div class="section-title">よくあるご質問</div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q. 途中で解約できますか？</div>
+            <div class="faq-answer">
+                もちろんです。いつでも解約可能です。解約手数料はかかりません。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q. 動画はどうやって見るのですか？</div>
+            <div class="faq-answer">
+                メンバー専用サイト or LINE公式アカウント経由でアクセスできます。スマートフォン、タブレット、PCでいつでも視聴可能です。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q. 子どもだけでも参加できますか？</div>
+            <div class="faq-answer">
+                親子での参加を推奨していますが、子ども限定のコンテンツもあります。詳しくはお問い合わせください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q. 福岡以外に住んでいますが参加できますか？</div>
+            <div class="faq-answer">
+                大丈夫です！オンラインライブ配信に全国どこからでも参加できます。またオフラインイベントも全国展開予定です。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q. お支払い方法は？</div>
+            <div class="faq-answer">
+                クレジットカード（VISA / Mastercard）、LINE Pay、銀行振込に対応しています。
+            </div>
+        </div>
+    </section>
+
+    <div class="divider" style="margin-bottom: 60px;"></div>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+    <p><strong>あじさい</strong></p>
+    <p>子ども・親・先生がつながる、あたらしい教育コミュニティ</p>
+    <div class="footer-social">
+        <a href="https://instagram.com/ajisai_career">Instagram</a>
+        <a href="#">LINE公式</a>
+        <a href="#">お問い合わせ</a>
+    </div>
+    <p style="margin-top: 30px; font-size: 12px; opacity: 0.7;">
+        © 2026 あじさい. All rights reserved.
+    </p>
+</div>
+
+<script>
+    // FAQ toggle
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            item.classList.toggle('open');
+        });
+    });
+
+    // Scroll to CTA
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Google Forms や会員登録フォームへのリンクを設定してください');
+        });
+    }
+</script>
+
+</body>
+</html>
