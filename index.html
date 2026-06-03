@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あじさい - 親子キャリア教育コミュニティ</title>
+    <title>あじさい説明会・体験会 - 親子で考える進路・未来</title>
     <style>
         * {
             margin: 0;
@@ -76,10 +76,21 @@
             background: white;
         }
 
+        .hero-tag {
+            display: inline-block;
+            font-size: 14px;
+            color: #5B3FA0;
+            font-weight: 600;
+            margin-bottom: 20px;
+            background: #f5f1ff;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
         .hero h1 {
-            font-size: 52px;
+            font-size: 48px;
             font-weight: 700;
-            line-height: 1.4;
+            line-height: 1.5;
             margin-bottom: 24px;
             color: #1a1a1a;
             letter-spacing: -0.5px;
@@ -89,7 +100,7 @@
             font-size: 18px;
             color: #666;
             margin-bottom: 40px;
-            line-height: 1.7;
+            line-height: 1.8;
             font-weight: 400;
         }
 
@@ -98,26 +109,15 @@
             margin-bottom: 40px;
         }
 
-        .hero-tag {
-            display: inline-block;
-            font-size: 16px;
-            color: #5B3FA0;
-            font-weight: 600;
-            margin-bottom: 40px;
-            background: #f5f1ff;
-            padding: 12px 24px;
-            border-radius: 30px;
-        }
-
         .cta-primary {
             display: inline-block;
             background: #5B3FA0;
             color: white;
-            padding: 16px 48px;
+            padding: 18px 52px;
             border-radius: 8px;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             transition: opacity 0.2s;
             border: none;
             cursor: pointer;
@@ -140,7 +140,7 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .section-title {
@@ -157,236 +157,231 @@
             font-weight: 400;
         }
 
-        /* ============ ABOUT ============ */
-        .about-text {
-            font-size: 18px;
-            color: #555;
-            line-height: 2;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .about-highlight {
-            color: #5B3FA0;
-            font-weight: 600;
-        }
-
-        /* ============ PROBLEMS ============ */
-        .problems-grid {
+        /* ============ WORRIES ============ */
+        .worries-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr;
+            gap: 32px;
         }
 
-        .problem-item {
-            text-align: center;
+        .worry-item {
+            background: #fafafa;
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid #5B3FA0;
         }
 
-        .problem-item .icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .problem-item h3 {
-            font-size: 18px;
-            font-weight: 600;
+        .worry-item h3 {
+            font-size: 20px;
+            font-weight: 700;
             color: #1a1a1a;
             margin-bottom: 12px;
         }
 
-        .problem-item p {
-            font-size: 15px;
-            color: #888;
+        .worry-item p {
+            font-size: 16px;
+            color: #666;
             line-height: 1.8;
         }
 
-        /* ============ SOLUTIONS ============ */
-        .solutions-grid {
+        /* ============ ABOUT AJISAI ============ */
+        .about-section {
+            line-height: 2;
+        }
+
+        .about-section p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .about-highlight {
+            color: #5B3FA0;
+            font-weight: 700;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-box {
+            text-align: center;
+        }
+
+        .feature-box .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #5B3FA0;
+            margin-bottom: 12px;
+        }
+
+        .feature-box p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ============ CHANGES ============ */
+        .changes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .change-card {
+            background: #fafafa;
+            padding: 40px 32px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .change-card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .change-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .change-card .label {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .change-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ============ TESTIMONIALS ============ */
+        .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
 
-        .solution-item {
-            background: #fafafa;
-            padding: 40px 32px;
+        .testimonial {
+            background: white;
+            padding: 32px;
             border-radius: 12px;
-            text-align: center;
+            border: 1px solid #e0e0e0;
         }
 
-        .solution-item .icon {
-            font-size: 48px;
-            margin-bottom: 24px;
-        }
-
-        .solution-item h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #5B3FA0;
-            margin-bottom: 12px;
-        }
-
-        .solution-item p {
+        .testimonial-text {
             font-size: 15px;
             color: #666;
-            line-height: 1.8;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
         }
 
-        /* ============ PLANS ============ */
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .plan-box {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 40px 32px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .plan-box:hover {
-            border-color: #5B3FA0;
-            box-shadow: 0 4px 20px rgba(91, 63, 160, 0.1);
-        }
-
-        .plan-box.featured {
-            border: 2px solid #5B3FA0;
-            position: relative;
-            transform: scale(1.02);
-        }
-
-        .plan-box.featured::before {
-            content: '人気';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
             background: #5B3FA0;
             color: white;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
         }
 
-        .plan-name {
-            font-size: 20px;
+        .author-info h4 {
+            font-size: 14px;
             font-weight: 700;
             color: #1a1a1a;
-            margin-bottom: 16px;
+            margin-bottom: 4px;
         }
 
-        .plan-price {
-            font-size: 48px;
-            font-weight: 700;
-            color: #5B3FA0;
-            margin-bottom: 8px;
-        }
-
-        .plan-price-period {
-            font-size: 14px;
-            color: #999;
-            margin-bottom: 32px;
-        }
-
-        .plan-features {
-            list-style: none;
-            margin-bottom: 32px;
-            text-align: left;
-        }
-
-        .plan-features li {
-            padding: 12px 0;
-            font-size: 15px;
-            color: #666;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .plan-features li:last-child {
-            border-bottom: none;
-        }
-
-        .plan-features li::before {
-            content: '✓ ';
-            color: #5B3FA0;
-            font-weight: 700;
-            margin-right: 8px;
-        }
-
-        .plan-cta {
-            display: block;
-            background: #5B3FA0;
-            color: white;
-            padding: 14px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            transition: opacity 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .plan-cta:hover {
-            opacity: 0.9;
-        }
-
-        .plan-note {
+        .author-info p {
             font-size: 12px;
             color: #999;
-            margin-top: 16px;
-            font-style: italic;
         }
 
         /* ============ EVENT ============ */
-        .event-box {
-            background: #fafafa;
-            padding: 60px 40px;
-            border-radius: 12px;
-            text-align: center;
-            border-left: 4px solid #5B3FA0;
+        .event-section {
+            background: linear-gradient(135deg, #f5f1ff 0%, #fff5f8 100%);
+            padding: 80px 40px;
+            border-radius: 16px;
         }
 
-        .event-box .icon {
-            font-size: 56px;
-            margin-bottom: 24px;
-        }
-
-        .event-box h3 {
-            font-size: 28px;
+        .event-title {
+            font-size: 44px;
             font-weight: 700;
-            color: #1a1a1a;
+            color: #5B3FA0;
             margin-bottom: 12px;
+            text-align: center;
         }
 
         .event-date {
-            font-size: 18px;
+            font-size: 24px;
             font-weight: 700;
-            color: #5B3FA0;
-            margin-bottom: 20px;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 32px;
         }
 
-        .event-box p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 12px;
-        }
-
-        .event-details {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+        .event-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
         }
 
         .event-detail {
+            text-align: center;
+        }
+
+        .event-detail .label {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .event-detail .value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .event-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .event-cta .cta-primary {
+            background: #5B3FA0;
+            font-size: 18px;
+            padding: 20px 60px;
+        }
+
+        .event-note {
+            text-align: center;
+            margin-top: 20px;
             font-size: 14px;
             color: #666;
         }
@@ -509,17 +504,12 @@
                 padding: 60px 0;
             }
 
-            .section-header {
-                margin-bottom: 50px;
+            .event-title {
+                font-size: 32px;
             }
 
-            .plan-box.featured {
-                transform: scale(1);
-            }
-
-            .event-details {
-                flex-direction: column;
-                gap: 20px;
+            .event-date {
+                font-size: 20px;
             }
         }
 
@@ -532,8 +522,9 @@
                 font-size: 22px;
             }
 
-            .plans-grid {
-                grid-template-columns: 1fr;
+            .cta-primary {
+                padding: 14px 28px;
+                font-size: 14px;
             }
         }
     </style>
@@ -545,7 +536,7 @@
     <div class="container">
         <div class="header-inner">
             <div class="logo">🌿 あじさい</div>
-            <button class="nav-btn">会員登録</button>
+            <button class="nav-btn" onclick="document.querySelector('.event-cta').scrollIntoView({behavior:'smooth'})">イベント予約</button>
         </div>
     </div>
 </header>
@@ -553,125 +544,151 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
     <div class="container">
-        <div class="hero-tag">親子で学べるキャリア教育</div>
-        <h1>『うちの子、このままでいいのかな』<br>そんな気持ちから始まる</h1>
+        <div class="hero-tag">6月21日 父の日スペシャル</div>
+        <h1>『うちの子、このままでいいのかな』<br>その気持ちの向き合い方を<br>親子で一緒に考えてみませんか？</h1>
         <p class="subtitle">
-            夢を追い続ける大人のストーリーを聞いて<br>
-            子どもの『なりたい自分』が見つかるコミュニティ
+            夢を追い続ける大人のストーリーを聞く<br>
+            あじさいの説明会・体験会へようこそ
         </p>
         <div class="emoji-hero">🌿🌸</div>
-        <button class="cta-primary">LINE登録で動画1本を無料視聴</button>
-        <button class="cta-primary" style="background: white; color: #5B3FA0; border: 2px solid #5B3FA0;">会員登録へ</button>
+        <button class="cta-primary" onclick="document.querySelector('.event-cta').scrollIntoView({behavior:'smooth'})">イベント詳細を見る</button>
     </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section>
-    <div class="container">
-        <p class="about-text">
-            福岡から始まる、<span class="about-highlight">親子で学べるキャリア教育</span>。<br>
-            夢を追い続ける大人のストーリーを聞いて、<br>
-            子どもの『なりたい自分』が見つかるコミュニティです。
-        </p>
-    </div>
-</section>
-
-<!-- ============ PROBLEMS ============ -->
+<!-- ============ WORRIES ============ -->
 <section>
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">こんなお悩みありませんか？</h2>
+            <h2 class="section-title">こんな気持ち、ありませんか？</h2>
+            <p class="section-subtitle">お子様の進路・未来について、心配なこと</p>
         </div>
-        <div class="problems-grid">
-            <div class="problem-item">
-                <div class="icon">📚</div>
-                <h3>進路・将来について</h3>
-                <p>誰に相談すればいい？学校の先生だけでは足りない...と感じていませんか？</p>
+        <div class="worries-grid">
+            <div class="worry-item">
+                <h3>📚 進路・将来について、誰に相談すればいい？</h3>
+                <p>子どもに「将来どうしたい？」と聞いても、「わからない」。学校の先生にも相談できず、親だけで判断している...</p>
             </div>
-            <div class="problem-item">
-                <div class="icon">😟</div>
-                <h3>孤立した子育て</h3>
-                <p>同じ悩みを持つ親たちと繋がりたい。親のコミュニティがほしい</p>
+            <div class="worry-item">
+                <h3>😟 子育ての悩みをひとりで抱えている</h3>
+                <p>進路のこと、子どもの将来のことで不安。でも、同じ悩みを持つ親たちの声を聞く場所がない...</p>
             </div>
-            <div class="problem-item">
-                <div class="icon">💭</div>
-                <h3>サポート方法がわからない</h3>
-                <p>子どもの『本当にやりたいこと』を応援したいけど、どうすればいい？</p>
+            <div class="worry-item">
+                <h3>💭 子どもの『本当にやりたいこと』を応援したい</h3>
+                <p>才能を伸ばしてあげたい、でも親としてどうサポートすればいいかわからない...</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============ SOLUTIONS ============ -->
+<!-- ============ ABOUT AJISAI ============ -->
 <section>
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">あじさいが解決します</h2>
+            <h2 class="section-title">あじさいって、どんな場所？</h2>
         </div>
-        <div class="solutions-grid">
-            <div class="solution-item">
-                <div class="icon">🎯</div>
-                <h3>夢を追う大人のストーリー</h3>
-                <p>リアルに活躍する大人たちの人生経験を聞くことで、子どもの『やりたい』『なりたい』が見つかります</p>
-            </div>
-            <div class="solution-item">
-                <div class="icon">👨‍👩‍👧</div>
-                <h3>親のコミュニティ</h3>
-                <p>同じビジョンを持つ親たちと繋がり、『子育ての悩み』『子どもの未来』を安心して語り合える</p>
-            </div>
-            <div class="solution-item">
-                <div class="icon">💡</div>
-                <h3>ゼロ教師負担 × 継続</h3>
-                <p>先生に負担をかけず、子どもの成長が『継続』する。日本で唯一のモデルです</p>
+        <div class="about-section">
+            <p>
+                あじさいは、<span class="about-highlight">子ども・親・先生がつながる、あたらしい教育コミュニティ</span>です。
+            </p>
+            <p>
+                『<span class="about-highlight">夢を追い続ける大人のストーリー</span>』を子どもたちに届け、<br>
+                親たちが『子育ての悩み』『子どもの未来』を安心して語り合える場所。<br>
+                それが、あじさいです。
+            </p>
+            <p style="margin-top: 40px; font-weight: 600;">
+                3つの大切なこと
+            </p>
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <div class="icon">🎯</div>
+                    <h3>リアルなストーリー</h3>
+                    <p>夢を追い続ける大人たちの人生経験を聞くことで、『やりたい』『なりたい』が見つかる</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon">👨‍👩‍👧</div>
+                    <h3>親のコミュニティ</h3>
+                    <p>同じビジョンを持つ親たちと繋がり、孤立しない子育てができる</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon">💡</div>
+                    <h3>継続できる仕組み</h3>
+                    <p>先生に負担をかけず、子どもの成長が『継続』する。日本で唯一のモデル</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============ PLANS ============ -->
+<!-- ============ CHANGES ============ -->
 <section>
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">会員プラン</h2>
-            <p class="section-subtitle">あなたのライフスタイルに合わせて選べます</p>
+            <h2 class="section-title">参加すると、こんなことが変わります</h2>
         </div>
-        <div class="plans-grid">
-            <div class="plan-box">
-                <div class="plan-name">ベーシック</div>
-                <div class="plan-price">¥1,000</div>
-                <div class="plan-price-period">月額</div>
-                <ul class="plan-features">
-                    <li>月1回ギフトBOX<br>（¥1,500～¥2,000分）</li>
-                </ul>
-                <button class="plan-cta">登録する</button>
-                <div class="plan-note">初回7日間無料</div>
+        <div class="changes-grid">
+            <div class="change-card">
+                <div class="icon">👧</div>
+                <div class="label">お子様の変化</div>
+                <h3>『自分ってどんな人？』を知る</h3>
+                <p>大人たちのリアルなストーリーを通じて、自分の可能性に気づく。『なりたい自分』が見つかる。</p>
             </div>
-
-            <div class="plan-box featured">
-                <div class="plan-name">スタンダード</div>
-                <div class="plan-price">¥3,000</div>
-                <div class="plan-price-period">月額</div>
-                <ul class="plan-features">
-                    <li>月1回ギフトBOX充実版</li>
-                    <li>月2本ロールモデル動画配信</li>
-                    <li>親コミュニティ参加</li>
-                </ul>
-                <button class="plan-cta">登録する</button>
-                <div class="plan-note">初回7日間無料</div>
+            <div class="change-card">
+                <div class="icon">👨‍👩</div>
+                <div class="label">親の変化</div>
+                <h3>親たちとつながる安心感</h3>
+                <p>同じ悩みを持つ親たちと繋がり、『一人じゃない』という感覚。子育ての視点が変わる。</p>
             </div>
+            <div class="change-card">
+                <div class="icon">🌟</div>
+                <div class="label">家族の変化</div>
+                <h3>進路・未来について話し合える</h3>
+                <p>親子で『夢』『将来』について、安心して向き合える関係に。親子の絆が深まる。</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <div class="plan-box">
-                <div class="plan-name">プレミアム</div>
-                <div class="plan-price">¥5,000</div>
-                <div class="plan-price-period">月額</div>
-                <ul class="plan-features">
-                    <li>月1回ギフトBOXプレミアム版</li>
-                    <li>月2本ロールモデル動画配信</li>
-                    <li>イベント割引（¥5,000→¥3,500）</li>
-                    <li>子どもキャリア相談（月1回）</li>
-                </ul>
-                <button class="plan-cta">登録する</button>
-                <div class="plan-note">初回7日間無料</div>
+<!-- ============ TESTIMONIALS ============ -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">参加された親たちの声</h2>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    「子どもが『こんなことをしてみたい』と話すようになりました。親子で初めて『将来』について真剣に話し合えた瞬間です。」
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">A</div>
+                    <div class="author-info">
+                        <h4>福岡市・Aさん（小5の親）</h4>
+                        <p>昨年参加</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    「同じ悩みを持つ親たちと話して、『自分たちだけじゃない』と感じた。子育てに対する視点が変わりました。」
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">B</div>
+                    <div class="author-info">
+                        <h4>福岡市・Bさん（中1の親）</h4>
+                        <p>昨年参加</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    「大人のリアルなストーリーを聞く子どもの表情が違いました。親としても、『子どもをどう応援するか』が明確になりました。」
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">C</div>
+                    <div class="author-info">
+                        <h4>福岡市・Cさん（高1の親）</h4>
+                        <p>昨年参加</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -680,16 +697,37 @@
 <!-- ============ EVENT ============ -->
 <section>
     <div class="container">
-        <div class="event-box">
-            <div class="icon">🎉</div>
-            <h3>6月21日 父の日スペシャルイベント</h3>
-            <div class="event-date">開催予定</div>
-            <p>親子で一緒に『夢を追い続ける大人』のストーリーを聞く体験会</p>
-            <p>まずはこのイベントから始めてみませんか？</p>
-            <div class="event-details">
-                <div class="event-detail">📍 福岡市内</div>
-                <div class="event-detail">⏰ 午前 / 午後の部</div>
-                <div class="event-detail">👥 各回30名</div>
+        <div class="event-section">
+            <div class="event-title">🎉 6月21日 父の日スペシャル</div>
+            <div class="event-date">あじさい説明会・体験会</div>
+
+            <div class="event-details-grid">
+                <div class="event-detail">
+                    <div class="label">📍 場所</div>
+                    <div class="value">福岡市内</div>
+                </div>
+                <div class="event-detail">
+                    <div class="label">⏰ 時間</div>
+                    <div class="value">午前の部 / 午後の部</div>
+                </div>
+                <div class="event-detail">
+                    <div class="label">👥 定員</div>
+                    <div class="value">各回30名</div>
+                </div>
+                <div class="event-detail">
+                    <div class="label">💰 参加費</div>
+                    <div class="value">無料</div>
+                </div>
+            </div>
+
+            <p style="text-align: center; font-size: 16px; color: #666; line-height: 1.8;">
+                『夢を追い続ける大人』のストーリーを聞く体験会<br>
+                親子で、未来について考える時間をご一緒に
+            </p>
+
+            <div class="event-cta">
+                <button class="cta-primary">イベント参加フォームへ</button>
+                <div class="event-note">親子でのご参加をお待ちしています</div>
             </div>
         </div>
     </div>
@@ -703,20 +741,24 @@
         </div>
         <div class="faq-list">
             <div class="faq-item">
-                <div class="faq-question">Q. 途中で解約できますか？ <span class="faq-icon">▼</span></div>
-                <div class="faq-answer">もちろんです。いつでも解約可能です。解約手数料はかかりません。</div>
+                <div class="faq-question">Q. 親子で参加する必要がありますか？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">親子でのご参加を推奨していますが、親のみのご参加もお受けしています。お気軽にお申し込みください。</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Q. 動画はどうやって見るのですか？ <span class="faq-icon">▼</span></div>
-                <div class="faq-answer">メンバー専用サイト or LINE公式アカウント経由でアクセスできます。スマートフォン、タブレット、PCでいつでも視聴可能です。</div>
+                <div class="faq-question">Q. 説明会では何をするのですか？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">夢を追い続ける大人3名のストーリーをお聞きいただき、その後『親子で将来について考える時間』をご用意しています。参加者との交流時間もあります。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 会員登録は必須ですか？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">いいえ。説明会は無料で参加できます。会員登録はご興味があればで構いません。</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Q. 福岡以外に住んでいますが参加できますか？ <span class="faq-icon">▼</span></div>
-                <div class="faq-answer">大丈夫です！オンラインライブ配信に全国どこからでも参加できます。またオフラインイベントも全国展開予定です。</div>
+                <div class="faq-answer">今回は福岡での開催ですが、オンライン・オフラインでの全国展開も計画しています。ご興味ください。</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Q. お支払い方法は？ <span class="faq-icon">▼</span></div>
-                <div class="faq-answer">クレジットカード（VISA / Mastercard）、LINE Pay、銀行振込に対応しています。</div>
+                <div class="faq-question">Q. 会員登録するとどんな特典がありますか？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">月1回のギフトBOX配送、ロールモデル動画の配信、親のコミュニティアクセスなどをご用意しています。詳しくはイベント時にご説明いたします。</div>
             </div>
         </div>
     </div>
@@ -745,10 +787,11 @@
     });
 
     // CTA buttons
-    document.querySelectorAll('.nav-btn, .cta-primary, .plan-cta').forEach(btn => {
+    document.querySelectorAll('.cta-primary, .nav-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
+            if (btn.getAttribute('onclick')) return; // Skip scroll buttons
             e.preventDefault();
-            alert('Google Forms や会員登録フォームへのリンクを設定してください');
+            alert('Google Forms や申し込みフォームへのリンクを設定してください');
         });
     });
 </script>

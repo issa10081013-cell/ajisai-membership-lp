@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あじさい - 親子キャリア教育コミュニティ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #ffffff;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: #5B3FA0;
+        }
+
+        .nav-btn {
+            background: #5B3FA0;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            opacity: 0.85;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: white;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .emoji-hero {
+            font-size: 80px;
+            margin-bottom: 40px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 16px;
+            color: #5B3FA0;
+            font-weight: 600;
+            margin-bottom: 40px;
+            background: #f5f1ff;
+            padding: 12px 24px;
+            border-radius: 30px;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: #5B3FA0;
+            color: white;
+            padding: 16px 48px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            border: none;
+            cursor: pointer;
+            margin: 12px;
+        }
+
+        .cta-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* ============ SECTION ============ */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: #999;
+            font-weight: 400;
+        }
+
+        /* ============ ABOUT ============ */
+        .about-text {
+            font-size: 18px;
+            color: #555;
+            line-height: 2;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-highlight {
+            color: #5B3FA0;
+            font-weight: 600;
+        }
+
+        /* ============ PROBLEMS ============ */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .problem-item {
+            text-align: center;
+        }
+
+        .problem-item .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .problem-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .problem-item p {
+            font-size: 15px;
+            color: #888;
+            line-height: 1.8;
+        }
+
+        /* ============ SOLUTIONS ============ */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .solution-item {
+            background: #fafafa;
+            padding: 40px 32px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .solution-item .icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .solution-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #5B3FA0;
+            margin-bottom: 12px;
+        }
+
+        .solution-item p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ============ PLANS ============ */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .plan-box {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .plan-box:hover {
+            border-color: #5B3FA0;
+            box-shadow: 0 4px 20px rgba(91, 63, 160, 0.1);
+        }
+
+        .plan-box.featured {
+            border: 2px solid #5B3FA0;
+            position: relative;
+            transform: scale(1.02);
+        }
+
+        .plan-box.featured::before {
+            content: '人気';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #5B3FA0;
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .plan-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .plan-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #5B3FA0;
+            margin-bottom: 8px;
+        }
+
+        .plan-price-period {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 32px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .plan-features li {
+            padding: 12px 0;
+            font-size: 15px;
+            color: #666;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+
+        .plan-features li::before {
+            content: '✓ ';
+            color: #5B3FA0;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .plan-cta {
+            display: block;
+            background: #5B3FA0;
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .plan-cta:hover {
+            opacity: 0.9;
+        }
+
+        .plan-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 16px;
+            font-style: italic;
+        }
+
+        /* ============ EVENT ============ */
+        .event-box {
+            background: #fafafa;
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #5B3FA0;
+        }
+
+        .event-box .icon {
+            font-size: 56px;
+            margin-bottom: 24px;
+        }
+
+        .event-box h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .event-date {
+            font-size: 18px;
+            font-weight: 700;
+            color: #5B3FA0;
+            margin-bottom: 20px;
+        }
+
+        .event-box p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .event-detail {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* ============ FAQ ============ */
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 24px 0;
+        }
+
+        .faq-item:first-child {
+            padding-top: 0;
+        }
+
+        .faq-question {
+            font-size: 16px;
+            font-weight: 600;
+            color: #5B3FA0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #666;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            margin-top: 16px;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 32px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            font-size: 12px;
+            color: #999;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-header {
+                margin-bottom: 50px;
+            }
+
+            .plan-box.featured {
+                transform: scale(1);
+            }
+
+            .event-details {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <div class="logo">🌿 あじさい</div>
+            <button class="nav-btn">会員登録</button>
+        </div>
+    </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag">親子で学べるキャリア教育</div>
+        <h1>『うちの子、このままでいいのかな』<br>そんな気持ちから始まる</h1>
+        <p class="subtitle">
+            夢を追い続ける大人のストーリーを聞いて<br>
+            子どもの『なりたい自分』が見つかるコミュニティ
+        </p>
+        <div class="emoji-hero">🌿🌸</div>
+        <button class="cta-primary">LINE登録で動画1本を無料視聴</button>
+        <button class="cta-primary" style="background: white; color: #5B3FA0; border: 2px solid #5B3FA0;">会員登録へ</button>
+    </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section>
+    <div class="container">
+        <p class="about-text">
+            福岡から始まる、<span class="about-highlight">親子で学べるキャリア教育</span>。<br>
+            夢を追い続ける大人のストーリーを聞いて、<br>
+            子どもの『なりたい自分』が見つかるコミュニティです。
+        </p>
+    </div>
+</section>
+
+<!-- ============ PROBLEMS ============ -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">こんなお悩みありませんか？</h2>
+        </div>
+        <div class="problems-grid">
+            <div class="problem-item">
+                <div class="icon">📚</div>
+                <h3>進路・将来について</h3>
+                <p>誰に相談すればいい？学校の先生だけでは足りない...と感じていませんか？</p>
+            </div>
+            <div class="problem-item">
+                <div class="icon">😟</div>
+                <h3>孤立した子育て</h3>
+                <p>同じ悩みを持つ親たちと繋がりたい。親のコミュニティがほしい</p>
+            </div>
+            <div class="problem-item">
+                <div class="icon">💭</div>
+                <h3>サポート方法がわからない</h3>
+                <p>子どもの『本当にやりたいこと』を応援したいけど、どうすればいい？</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SOLUTIONS ============ -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">あじさいが解決します</h2>
+        </div>
+        <div class="solutions-grid">
+            <div class="solution-item">
+                <div class="icon">🎯</div>
+                <h3>夢を追う大人のストーリー</h3>
+                <p>リアルに活躍する大人たちの人生経験を聞くことで、子どもの『やりたい』『なりたい』が見つかります</p>
+            </div>
+            <div class="solution-item">
+                <div class="icon">👨‍👩‍👧</div>
+                <h3>親のコミュニティ</h3>
+                <p>同じビジョンを持つ親たちと繋がり、『子育ての悩み』『子どもの未来』を安心して語り合える</p>
+            </div>
+            <div class="solution-item">
+                <div class="icon">💡</div>
+                <h3>ゼロ教師負担 × 継続</h3>
+                <p>先生に負担をかけず、子どもの成長が『継続』する。日本で唯一のモデルです</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PLANS ============ -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">会員プラン</h2>
+            <p class="section-subtitle">あなたのライフスタイルに合わせて選べます</p>
+        </div>
+        <div class="plans-grid">
+            <div class="plan-box">
+                <div class="plan-name">ベーシック</div>
+                <div class="plan-price">¥1,000</div>
+                <div class="plan-price-period">月額</div>
+                <ul class="plan-features">
+                    <li>月1回ギフトBOX<br>（¥1,500～¥2,000分）</li>
+                </ul>
+                <button class="plan-cta">登録する</button>
+                <div class="plan-note">初回7日間無料</div>
+            </div>
+
+            <div class="plan-box featured">
+                <div class="plan-name">スタンダード</div>
+                <div class="plan-price">¥3,000</div>
+                <div class="plan-price-period">月額</div>
+                <ul class="plan-features">
+                    <li>月1回ギフトBOX充実版</li>
+                    <li>月2本ロールモデル動画配信</li>
+                    <li>親コミュニティ参加</li>
+                </ul>
+                <button class="plan-cta">登録する</button>
+                <div class="plan-note">初回7日間無料</div>
+            </div>
+
+            <div class="plan-box">
+                <div class="plan-name">プレミアム</div>
+                <div class="plan-price">¥5,000</div>
+                <div class="plan-price-period">月額</div>
+                <ul class="plan-features">
+                    <li>月1回ギフトBOXプレミアム版</li>
+                    <li>月2本ロールモデル動画配信</li>
+                    <li>イベント割引（¥5,000→¥3,500）</li>
+                    <li>子どもキャリア相談（月1回）</li>
+                </ul>
+                <button class="plan-cta">登録する</button>
+                <div class="plan-note">初回7日間無料</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ EVENT ============ -->
+<section>
+    <div class="container">
+        <div class="event-box">
+            <div class="icon">🎉</div>
+            <h3>6月21日 父の日スペシャルイベント</h3>
+            <div class="event-date">開催予定</div>
+            <p>親子で一緒に『夢を追い続ける大人』のストーリーを聞く体験会</p>
+            <p>まずはこのイベントから始めてみませんか？</p>
+            <div class="event-details">
+                <div class="event-detail">📍 福岡市内</div>
+                <div class="event-detail">⏰ 午前 / 午後の部</div>
+                <div class="event-detail">👥 各回30名</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">よくあるご質問</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">Q. 途中で解約できますか？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">もちろんです。いつでも解約可能です。解約手数料はかかりません。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 動画はどうやって見るのですか？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">メンバー専用サイト or LINE公式アカウント経由でアクセスできます。スマートフォン、タブレット、PCでいつでも視聴可能です。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 福岡以外に住んでいますが参加できますか？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">大丈夫です！オンラインライブ配信に全国どこからでも参加できます。またオフラインイベントも全国展開予定です。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. お支払い方法は？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">クレジットカード（VISA / Mastercard）、LINE Pay、銀行振込に対応しています。</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+    <div class="container">
+        <div class="footer-logo">🌿 あじさい</div>
+        <p class="footer-text">親子で学べるキャリア教育コミュニティ</p>
+        <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">LINE公式</a>
+            <a href="#">お問い合わせ</a>
+        </div>
+        <div class="footer-bottom">© 2026 あじさい. All rights reserved.</div>
+    </div>
+</footer>
+
+<script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', function() {
+            this.parentElement.classList.toggle('open');
+        });
+    });
+
+    // CTA buttons
+    document.querySelectorAll('.nav-btn, .cta-primary, .plan-cta').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Google Forms や会員登録フォームへのリンクを設定してください');
+        });
+    });
+</script>
+
+</body>
+</html>
